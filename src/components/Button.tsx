@@ -23,6 +23,10 @@ const Button = ({
     border-radius: 15px;
     cursor: pointer;
     letter-spacing: 0.025em;
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
   `;
 
   const secondaryStyle = css`
@@ -33,6 +37,10 @@ const Button = ({
     color: white;
     background-color: transparent;
     border: 1px solid white;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
   `;
 
   const styles = css(
