@@ -1,0 +1,19 @@
+name: CI(Continuous Integration)
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Checkout code from the repository
+      - name: Install dependencies
+        uses: actions/setup-node@v4 #Setup node environment
+        with:
+          node-version: "20" # Node version
+          cache: "npm" # Cache dependencies
+      - name: Install dependencies and test the code
+        run: npm ci # Install dependencies and test the code
+      - name: Run lint
+        run: npm run lint # Run linting
+      - name: Run tests
+        run: npm run test # Run tests
