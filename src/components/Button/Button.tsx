@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from "react";
 import { css } from "@emotion/css";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   variant?: "primary" | "secondary" | "tertiary";
   size?: "small" | "medium" | "large";
@@ -14,6 +14,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const buttonBaseStyle = css`
+    max-width: 100px;
     background-color: white;
     border: none;
     padding: 10px 15px;
