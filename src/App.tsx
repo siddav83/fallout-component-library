@@ -23,9 +23,13 @@ function App() {
     <>
       <div className={containerStyle}>
         <div className={buttonContainerStyle}>
-          <Button>Button</Button>
-          <Button variant="secondary">Button</Button>
-          <Button variant="tertiary">Button</Button>
+          <Button size="small">Button</Button>
+          <Button size="medium" variant="secondary">
+            Button
+          </Button>
+          <Button size="large" variant="tertiary">
+            Button
+          </Button>
           <FileInput label="Upload CSV File" />
         </div>
       </div>

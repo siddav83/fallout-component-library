@@ -44,13 +44,30 @@ const Button = ({
     }
   `;
 
+  const smallStyle = css`
+    font-size: 12px;
+    padding: 5px 10px;
+  `;
+  const mediumStyle = css`
+    font-size: 16px;
+    padding: 10px 15px;
+  `;
+  const largeStyle = css`
+    font-size: 20px;
+    padding: 15px 20px;
+  `;
+  const sizeStyle = css`
+    ${size === "small" && smallStyle}
+    ${size === "medium" && mediumStyle}
+    ${size === "large" && largeStyle}
+  `;
   const styles = css(
     buttonBaseStyle,
     variant === "secondary" && secondaryStyle,
     variant === "tertiary" && tertiaryStyle,
   );
   return (
-    <button className={styles} {...props}>
+    <button className={`${styles} ${sizeStyle}`} {...props}>
       {children}
     </button>
   );
